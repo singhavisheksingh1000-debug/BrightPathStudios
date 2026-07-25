@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrightPath Studios | Digital Planners, Journals & Toolkits</title>
+  <meta name="description" content="Beautiful digital PDFs for modern women, parents and professionals. Pregnancy journals, baby memory books, life planners, Halloween kits and HR toolkits. Instant download for USA, Europe, Australia & more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #5b4cdb;
+      --primary-dark: #4a3cc4;
+      --primary-light: #f0eeff;
+      --accent: #e85d75;
+      --text: #1a1630;
+      --text-muted: #6b7280;
+      --bg: #ffffff;
+      --bg-soft: #f9f8fc;
+      --border: #e8e6f0;
+      --success: #10b981;
+      --radius: 18px;
+      --shadow: 0 12px 40px -12px rgba(91, 76, 219, 0.18);
+      --shadow-lg: 0 25px 50px -15px rgba(91, 76, 219, 0.22);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .logo-text { font-family: 'Playfair Display', Georgia, serif; }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    header.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .logo-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--primary), #8b7cf6);
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 800; font-size: 1.1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      font-size: 0.93rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.93rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 16px rgba(91, 76, 219, 0.35);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-outline:hover { background: var(--primary-light); }
+    .btn-accent {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 4px 16px rgba(232, 93, 117, 0.35);
+    }
+    .btn-accent:hover {
+      background: #d44a62;
+      transform: translateY(-2px);
+    }
+    .btn-sm { padding: 10px 18px; font-size: 0.88rem; }
+
+    .menu-toggle {
+      display: none;
+      background: none; border: none; cursor: pointer; padding: 8px;
+    }
+    .menu-toggle span {
+      display: block; width: 24px; height: 2.5px;
+      background: var(--text); margin: 5px 0; border-radius: 2px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      padding: 130px 0 70px;
+      background: linear-gradient(165deg, #f0eeff 0%, #ffffff 45%, #fff5f7 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -15%; right: -8%;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(91,76,219,0.11) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 4.8vw, 3.35rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span { color: var(--primary); }
+
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      max-width: 470px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .stat span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-visual { position: relative; }
+    .hero-card {
+      background: white;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      transform: rotate(1.5deg);
+    }
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .hero-card-icon {
+      width: 48px; height: 48px;
+      background: var(--primary-light);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .hero-card h3 {
+      font-size: 1.1rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+    }
+    .hero-card p { font-size: 0.88rem; color: var(--text-muted); }
+
+    .mock-pdf {
+      background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 14px;
+    }
+    .mock-line {
+      height: 9px;
+      background: #cbd5e1;
+      border-radius: 4px;
+      margin-bottom: 9px;
+    }
+    .mock-line.short { width: 55%; }
+    .mock-line.medium { width: 78%; }
+
+    .floating-badge {
+      position: absolute;
+      bottom: -14px; left: -18px;
+      background: white;
+      padding: 11px 16px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .floating-badge .dot {
+      width: 9px; height: 9px;
+      background: var(--success);
+      border-radius: 50%;
+    }
+
+    /* ========== CATEGORIES ========== */
+    .categories {
+      padding: 50px 0 20px;
+      background: white;
+    }
+    .cat-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .cat-pill {
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cat-pill:hover, .cat-pill.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* ========== PRODUCTS ========== */
+    .products {
+      padding: 40px 0 90px;
+      background: white;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 40px;
+    }
+    .section-header .eyebrow {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+    .section-header h2 {
+      font-size: clamp(1.85rem, 3.8vw, 2.4rem);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    .slider-wrap { position: relative; }
+    .slider-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .slider-btn {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: white;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .slider-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .products-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 10px 4px 24px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .products-track::-webkit-scrollbar { display: none; }
+
+    .product-card {
+      flex: 0 0 300px;
+      scroll-snap-align: start;
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .product-image {
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      font-size: 3.2rem;
+    }
+    .product-tag {
+      position: absolute;
+      top: 12px; left: 12px;
+      background: white;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .product-tag.new { color: var(--accent); }
+
+    .product-body {
+      padding: 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .product-body h3 {
+      font-size: 1.1rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .product-body p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .price {
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+    .price span {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-left: 5px;
+    }
+
+    /* ========== FEATURES ========== */
+    .features {
+      padding: 90px 0;
+      background: var(--bg-soft);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      transition: all 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: #d4d0f5;
+    }
+    .feature-icon {
+      width: 50px; height: 50px;
+      background: var(--primary-light);
+      border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 {
+      font-size: 1.12rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+    }
+
+    /* ========== ABOUT ========== */
+    .about {
+      padding: 90px 0;
+      background: white;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+    .about-content h2 {
+      font-size: clamp(1.85rem, 3.8vw, 2.3rem);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-size: 1.03rem;
+    }
+    .about-highlight {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0;
+      font-size: 0.98rem;
+    }
+    .about-highlight strong { color: var(--primary); }
+
+    .regions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 28px;
+    }
+    .region-tag {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .about-visual {
+      background: linear-gradient(145deg, #5b4cdb, #8b7cf6);
+      border-radius: 22px;
+      padding: 44px 36px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-visual::after {
+      content: '';
+      position: absolute;
+      bottom: -35px; right: -35px;
+      width: 160px; height: 160px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+    .about-visual h3 {
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+    }
+    .about-visual p {
+      opacity: 0.9;
+      margin-bottom: 24px;
+      font-size: 1.02rem;
+    }
+    .about-list { list-style: none; }
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .about-list li::before {
+      content: '✓';
+      width: 22px; height: 22px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* ========== CTA ========== */
+    .cta {
+      padding: 85px 0;
+      background: linear-gradient(135deg, #1a1630 0%, #2d2660 100%);
+      color: white;
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: clamp(1.85rem, 3.8vw, 2.4rem);
+      margin-bottom: 14px;
+    }
+    .cta p {
+      opacity: 0.85;
+      max-width: 500px;
+      margin: 0 auto 30px;
+      font-size: 1.08rem;
+    }
+    .cta-form {
+      display: flex;
+      max-width: 450px;
+      margin: 0 auto;
+      gap: 8px;
+      background: white;
+      padding: 6px;
+      border-radius: 999px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+    .cta-form input {
+      flex: 1;
+      border: none;
+      padding: 13px 18px;
+      font-size: 0.98rem;
+      border-radius: 999px;
+      outline: none;
+      font-family: inherit;
+    }
+    .cta-form .btn { padding: 13px 26px; white-space: nowrap; }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #0f0d1a;
+      color: #94a3b8;
+      padding: 55px 0 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 42px;
+    }
+    .footer-brand .logo { color: white; margin-bottom: 14px; }
+    .footer-brand p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      max-width: 270px;
+    }
+    .footer-col h4 {
+      color: white;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem;
+      margin-bottom: 9px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid #1e1b2e;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.83rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .hero-content, .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero-visual { max-width: 380px; margin: 0 auto; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .product-card { flex: 0 0 280px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px; left: 0; right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 22px;
+        gap: 14px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+      .features-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero { padding: 110px 0 50px; }
+      .hero-stats { gap: 22px; }
+      .cta-form {
+        flex-direction: column;
+        border-radius: 16px;
+        padding: 12px;
+      }
+      .cta-form .btn { width: 100%; }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      .product-card { flex: 0 0 260px; }
+      .slider-nav { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="header">
+    <div class="container nav">
+      <a href="#" class="logo">
+        <div class="logo-icon">B</div>
+        <span class="logo-text">BrightPath Studios</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#products">Shop</a>
+        <a href="#features">Why Us</a>
+        <a href="#about">About</a>
+        <a href="#newsletter" class="btn btn-primary btn-sm">Free Guide</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div>
+        <div class="hero-badge">✨ Instant PDF Downloads</div>
+        <h1>Beautiful digital tools for <span>life’s brightest chapters</span></h1>
+        <p class="hero-desc">
+          Thoughtfully designed journals, planners and toolkits for modern women, parents and professionals across the USA, Europe, Australia and beyond.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Browse Collection →</a>
+          <a href="#about" class="btn btn-outline">Our Story</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>6+</strong>
+            <span>Ready PDFs</span>
+          </div>
+          <div class="stat">
+            <strong>Instant</strong>
+            <span>Download</span>
+          </div>
+          <div class="stat">
+            <strong>Printable</strong>
+            <span>& Digital Use</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-icon">🤰</div>
+            <div>
+              <h3>Pregnancy Journal</h3>
+              <p>Track every special moment</p>
+            </div>
+          </div>
+          <div class="mock-pdf">
+            <div class="mock-line"></div>
+            <div class="mock-line medium"></div>
+            <div class="mock-line short"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line medium"></div>
+          </div>
+        </div>
+        <div class="floating-badge">
+          <div class="dot"></div>
+          Instant download
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORIES + PRODUCTS ==================== -->
+  <section class="categories" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Shop</span>
+        <h2>Our Digital Collection</h2>
+        <p>Swipe or use the arrows. Filter by category below.</p>
+      </div>
+
+      <div class="cat-pills" id="categoryFilters">
+        <button class="cat-pill active" data-category="all">All</button>
+        <button class="cat-pill" data-category="Motherhood">Motherhood</button>
+        <button class="cat-pill" data-category="Life Planning">Life Planning</button>
+        <button class="cat-pill" data-category="Seasonal">Seasonal</button>
+        <button class="cat-pill" data-category="Career">Career</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <div class="slider-wrap">
+        <div class="slider-nav">
+          <button class="slider-btn" id="prevBtn" aria-label="Previous">←</button>
+          <button class="slider-btn" id="nextBtn" aria-label="Next">→</button>
+        </div>
+        <div class="products-track" id="productsTrack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES ==================== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Why BrightPath</span>
+        <h2>Designed for real life</h2>
+        <p>Every PDF is practical, beautiful, and ready to use the moment you download it.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Download</h3>
+          <p>Receive your PDF immediately after purchase. No waiting, no shipping delays.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🖨️</div>
+          <h3>Print or Digital</h3>
+          <p>Use on your iPad/tablet or print at home. Works beautifully both ways.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Thoughtful Design</h3>
+          <p>Clean layouts and warm aesthetics made for Western markets and modern lifestyles.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Global Ready</h3>
+          <p>Created for customers in the USA, Europe, Australia, Canada and other Western countries.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Free Updates</h3>
+          <p>When we improve a product, you get the new version at no extra cost.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💝</div>
+          <h3>Made with Care</h3>
+          <p>From pregnancy journals to career toolkits — every page is created with intention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-content">
+        <span class="eyebrow" style="color:var(--primary);font-weight:600;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.06em;">About Us</span>
+        <h2>Lighting the path for life’s important chapters</h2>
+        <p>
+          BrightPath Studios creates practical digital planners, journals and toolkits that help people capture memories, stay organized, and move forward with clarity.
+        </p>
+        <p>
+          Our collection currently includes motherhood journals, life planners, seasonal activity kits, and career resources — with more on the way.
+        </p>
+
+        <div class="about-highlight">
+          <strong>Expanding soon:</strong> More resources focused on women students, career growth, and personal development.
+        </div>
+
+        <div class="regions">
+          <span class="region-tag">🇺🇸 USA</span>
+          <span class="region-tag">🇪🇺 Europe</span>
+          <span class="region-tag">🇦🇺 Australia</span>
+          <span class="region-tag">🇨🇦 Canada</span>
+          <span class="region-tag">🇬🇧 UK</span>
+        </div>
+
+        <a href="#newsletter" class="btn btn-primary">Join Our Community</a>
+      </div>
+
+      <div class="about-visual">
+        <h3>Our Promise</h3>
+        <p>Simple, beautiful tools that fit real life — not just look good on a screen.</p>
+        <ul class="about-list">
+          <li>Instant digital delivery</li>
+          <li>Print-friendly designs</li>
+          <li>Clear, modern layouts</li>
+          <li>Free future updates</li>
+          <li>Made for Western audiences</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta" id="newsletter">
+    <div class="container">
+      <h2>Get a free Life Reset Checklist</h2>
+      <p>Join our list and receive a free printable checklist to help you reset and refocus. Perfect for a fresh start any time of year.</p>
+      <form class="cta-form" onsubmit="event.preventDefault(); alert('Thank you! (This is a demo — connect your email service later)');">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit" class="btn btn-accent">Send Free Checklist</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">B</div>
+            <span class="logo-text">BrightPath Studios</span>
+          </a>
+          <p>Digital planners, journals and toolkits for modern life — designed for women, parents and professionals worldwide.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#products">All Products</a>
+          <a href="#products">Motherhood</a>
+          <a href="#products">Life Planning</a>
+          <a href="#products">Seasonal</a>
+          <a href="#products">Career</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#features">Why Us</a>
+          <a href="#newsletter">Free Guide</a>
+          <a href="mailto:hello@brightpathstudios.com">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Coming Soon</h4>
+          <a href="#">Women Student Resources</a>
+          <a href="#">Career Growth Kits</a>
+          <a href="#">More Planners</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 BrightPath Studios. All rights reserved.</span>
+        <span>Serving USA · Europe · Australia & beyond</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* =====================================================
+       ★★★ EASY TO EDIT SECTION ★★★
+       
+       Just edit the products array below.
+       
+       Fields you can change:
+       - title, description, price, oldPrice (optional)
+       - category  → must match one of the filter buttons
+       - emoji, tag, tagType ("new" for pink tag)
+       - buyLink   → put your real Gumroad / Stripe link here
+       
+       To add a new product: copy one object and change the values.
+       To remove a product: delete the whole object.
+       ===================================================== */
+
+    const products = [
+      {
+        id: 1,
+        title: "Women Pregnancy Journal",
+        description: "A beautiful week-by-week journal to capture symptoms, milestones, thoughts and memories throughout your pregnancy journey.",
+        price: 19,
+        oldPrice: 27,
+        category: "Motherhood",
+        emoji: "🤰",
+        tag: "Popular",
+        buyLink: "#newsletter"
+      },
+      {
+        id: 2,
+        title: "Life Reset Planner",
+        description: "A complete digital planner to help you reset routines, set meaningful goals, and create a life that feels aligned again.",
+        price: 15,
+        category: "Life Planning",
+        emoji: "🌿",
+        tag: "New",
+        tagType: "new",
+        buyLink: "#newsletter"
+      },
+      {
+        id: 3,
+        title: "Baby 1st Year Memory Journal",
+        description: "Cherish every first smile, first step and special moment. A keepsake journal for the most magical first year.",
+        price: 18,
+        category: "Motherhood",
+        emoji: "👶",
+        buyLink: "#newsletter"
+      },
+      {
+        id: 4,
+        title: "Halloween Party Planner",
+        description: "Everything you need to plan a fun and stress-free Halloween party — guest lists, menus, decorations checklist and more.",
+        price: 12,
+        category: "Seasonal",
+        emoji: "🎃",
+        buyLink: "#newsletter"
+      },
+      {
+        id: 5,
+        title: "Halloween DIY for Kids",
+        description: "Creative, easy and budget-friendly DIY activities and crafts to keep kids entertained this Halloween season.",
+        price: 9,
+        category: "Seasonal",
+        emoji: "👻",
+        tag: "Kids",
+        buyLink: "#newsletter"
+      },
+      {
+        id: 6,
+        title: "HR Toolkit for Freshers",
+        description: "Essential templates and guides for new HR professionals — onboarding checklists, interview sheets, policies and more.",
+        price: 22,
+        category: "Career",
+        emoji: "💼",
+        tag: "Professional",
+        buyLink: "#newsletter"
+      }
+    ];
+
+    /* ========== RENDER PRODUCTS ========== */
+    const track = document.getElementById('productsTrack');
+
+    function renderProducts(filter = 'all') {
+      const filtered = filter === 'all'
+        ? products
+        : products.filter(p => p.category === filter);
+
+      track.innerHTML = filtered.map(p => `
+        <article class="product-card" data-category="${p.category}">
+          <div class="product-image" style="background: linear-gradient(135deg, ${getGradient(p.category)})">
+            ${p.tag ? `<span class="product-tag ${p.tagType || ''}">${p.tag}</span>` : ''}
+            ${p.emoji}
+          </div>
+          <div class="product-body">
+            <div class="product-category">${p.category}</div>
+            <h3>${p.title}</h3>
+            <p>${p.description}</p>
+            <div class="product-footer">
+              <div class="price">$${p.price}${p.oldPrice ? ` <span>$${p.oldPrice}</span>` : ''}</div>
+              <a href="${p.buyLink}" class="btn btn-primary btn-sm">Get Access</a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function getGradient(category) {
+      const map = {
+        'Motherhood': '#fce7f3 0%, #fbcfe8 100%',
+        'Life Planning': '#e0e7ff 0%, #c7d2fe 100%',
+        'Seasonal': '#ffedd5 0%, #fed7aa 100%',
+        'Career': '#d1fae5 0%, #a7f3d0 100%'
+      };
+      return map[category] || '#e0e7ff 0%, #c7d2fe 100%';
+    }
+
+    renderProducts();
+
+    /* ========== CATEGORY FILTERS ========== */
+    document.querySelectorAll('.cat-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderProducts(btn.dataset.category);
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      });
+    });
+
+    /* ========== SLIDER CONTROLS ========== */
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      track.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      track.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+
+    /* ========== HEADER & MOBILE MENU ========== */
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
